@@ -22,7 +22,7 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #006637;
+        background: #26803a;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,17 +30,14 @@
         min-height: 100vh;
       }
 
-      /* ===== KARTU UTAMA ===== */
+      /* ===== KARTU UTAMA — PUTIH ===== */
       .card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: #ffffff;
         border-radius: 24px;
-        padding: 28px 32px 24px;
+        padding: 32px 36px 28px;
         max-width: 820px;
         width: 100%;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
       }
 
@@ -48,39 +45,41 @@
       .header {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 22px;
+        gap: 18px;
+        margin-bottom: 24px;
       }
       .header .logo-img {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid rgba(255, 255, 255, 0.3);
+        border: 3px solid #6db03d;
         flex-shrink: 0;
+        background: white;
       }
       .header .logo-placeholder {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.15);
+        background: #e8f5e0;
         display: none;
         align-items: center;
         justify-content: center;
         font-size: 28px;
-        color: white;
+        color: #6db03d;
         flex-shrink: 0;
+        border: 3px solid #6db03d;
       }
       .header-text h1 {
-        color: white;
-        font-size: 24px;
+        color: #2d5a1e;
+        font-size: 26px;
         font-weight: 700;
       }
       .header-text h1 span {
-        color: #d4edc9;
+        color: #6db03d;
       }
       .header-text p {
-        color: rgba(255, 255, 255, 0.8);
+        color: #6b7a63;
         font-size: 13px;
         letter-spacing: 1.5px;
         text-transform: uppercase;
@@ -95,13 +94,13 @@
       }
 
       .menu-item {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: #f0f7eb;
+        border: 1px solid #dce8d4;
         border-radius: 16px;
         padding: 18px 10px;
         text-align: center;
         text-decoration: none;
-        color: white;
+        color: #2d5a1e;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         position: relative;
@@ -116,7 +115,7 @@
         height: 220%;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(255, 255, 255, 0.1) 0%,
+          rgba(109, 176, 61, 0.08) 0%,
           transparent 60%
         );
         opacity: 0;
@@ -127,9 +126,9 @@
       }
       .menu-item:hover {
         transform: translateY(-4px) scale(1.03);
-        border-color: rgba(255, 255, 255, 0.4);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
-        background: rgba(255, 255, 255, 0.16);
+        border-color: #6db03d;
+        box-shadow: 0 8px 24px rgba(109, 176, 61, 0.2);
+        background: #e8f5e0;
       }
       .menu-item:active {
         transform: scale(0.95);
@@ -149,24 +148,18 @@
       .menu-item .badge {
         display: inline-block;
         font-size: 9px;
-        background: rgba(255, 255, 255, 0.15);
+        background: #dce8d4;
         padding: 2px 8px;
         border-radius: 20px;
         margin-top: 5px;
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      .item-erm i,
-      .item-igd i,
-      .item-rajal i,
-      .item-lab i,
-      .item-rawat-inap i,
-      .item-farmasi i {
-        color: #ffffff;
+        color: #4a7a30;
       }
 
       .full-width {
         grid-column: 1 / -1;
+      }
+      .full-width i {
+        color: #6db03d;
       }
 
       /* ===== FOOTER ===== */
@@ -174,21 +167,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 18px;
-        padding-top: 14px;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid #e0e8db;
         flex-wrap: wrap;
         gap: 8px;
       }
       .footer .info {
-        color: rgba(255, 255, 255, 0.55);
+        color: #8a9a82;
         font-size: 11px;
       }
       .footer .info i {
         margin-right: 4px;
       }
       .jam-digital {
-        color: #d4edc9;
+        color: #6db03d;
         font-size: 17px;
         font-weight: 700;
         font-family: "Courier New", monospace;
@@ -212,11 +205,11 @@
         }
         .header .logo-img,
         .header .logo-placeholder {
-          width: 65px;
-          height: 65px;
+          width: 70px;
+          height: 70px;
         }
         .header-text h1 {
-          font-size: 26px;
+          font-size: 28px;
         }
       }
 
@@ -254,8 +247,9 @@
         }
         .header .logo-img,
         .header .logo-placeholder {
-          width: 48px;
-          height: 48px;
+          width: 50px;
+          height: 50px;
+          font-size: 22px;
         }
         .header-text h1 {
           font-size: 20px;
@@ -302,12 +296,8 @@
 
       <!-- ===== GRID TOMBOL ===== -->
       <div class="grid">
-        <a
-          href="https://erm.cpdh.web.id"
-          target="_blank"
-          class="menu-item item-erm"
-        >
-          <i class="fas fa-notes-medical"></i>
+        <a href="https://erm.cpdh.web.id" target="_blank" class="menu-item">
+          <i class="fas fa-notes-medical" style="color: #2e86de"></i>
           <span class="label">Sistem ERM</span>
           <span class="badge">Rekam Medis</span>
         </a>
@@ -315,29 +305,21 @@
         <a
           href="https://dashboard-igd.cpdh.web.id"
           target="_blank"
-          class="menu-item item-igd"
+          class="menu-item"
         >
-          <i class="fas fa-tachometer-alt"></i>
+          <i class="fas fa-tachometer-alt" style="color: #10ac84"></i>
           <span class="label">Dashboard IGD</span>
           <span class="badge">Real-time</span>
         </a>
 
-        <a
-          href="https://rajal.cpdh.web.id"
-          target="_blank"
-          class="menu-item item-rajal"
-        >
-          <i class="fas fa-user-md"></i>
+        <a href="https://rajal.cpdh.web.id" target="_blank" class="menu-item">
+          <i class="fas fa-user-md" style="color: #e67e22"></i>
           <span class="label">Rawat Jalan</span>
           <span class="badge">Poli</span>
         </a>
 
-        <a
-          href="https://lab.cpdh.web.id"
-          target="_blank"
-          class="menu-item item-lab"
-        >
-          <i class="fas fa-flask"></i>
+        <a href="https://lab.cpdh.web.id" target="_blank" class="menu-item">
+          <i class="fas fa-flask" style="color: #6c5ce7"></i>
           <span class="label">Laboratorium</span>
           <span class="badge">Hasil Lab</span>
         </a>
@@ -345,19 +327,15 @@
         <a
           href="https://rawatinap.cpdh.web.id"
           target="_blank"
-          class="menu-item item-rawat-inap"
+          class="menu-item"
         >
-          <i class="fas fa-procedures"></i>
+          <i class="fas fa-procedures" style="color: #e84393"></i>
           <span class="label">Rawat Inap</span>
           <span class="badge">Kamar & Pasien</span>
         </a>
 
-        <a
-          href="https://farmasi.cpdh.web.id"
-          target="_blank"
-          class="menu-item item-farmasi"
-        >
-          <i class="fas fa-pills"></i>
+        <a href="https://farmasi.cpdh.web.id" target="_blank" class="menu-item">
+          <i class="fas fa-pills" style="color: #00b894"></i>
           <span class="label">Farmasi</span>
           <span class="badge">Obat & Stok</span>
         </a>
@@ -366,7 +344,7 @@
           href="https://link-lain.com"
           target="_blank"
           class="menu-item full-width"
-          style="background: rgba(255, 255, 255, 0.06)"
+          style="background: #f5faf2; border: 1px dashed #6db03d"
         >
           <i class="fas fa-external-link-alt"></i>
           <span class="label">Aplikasi Lainnya</span>
