@@ -19,7 +19,6 @@
       body {
         height: 100%;
       }
-
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: #26803a;
@@ -29,7 +28,6 @@
         padding: 16px;
         min-height: 100vh;
       }
-
       /* ===== KARTU UTAMA — PUTIH ===== */
       .card {
         background: #ffffff;
@@ -40,7 +38,6 @@
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
       }
-
       /* ===== HEADER ===== */
       .header {
         display: flex;
@@ -85,19 +82,17 @@
         text-transform: uppercase;
         margin-top: 2px;
       }
-
-      /* ===== GRID TOMBOL ===== */
+      /* ===== GRID TOMBOL — SERAGAM ===== */
       .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
       }
-
       .menu-item {
         background: #f0f7eb;
         border: 1px solid #dce8d4;
         border-radius: 16px;
-        padding: 18px 10px;
+        padding: 16px 10px;
         text-align: center;
         text-decoration: none;
         color: #2d5a1e;
@@ -105,6 +100,12 @@
         cursor: pointer;
         position: relative;
         overflow: hidden;
+        /* Tinggi seragam */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
       }
       .menu-item::before {
         content: "";
@@ -134,11 +135,23 @@
         transform: scale(0.95);
       }
 
-      .menu-item i {
-        font-size: 28px;
+      /* Gambar logo di dalam tombol — seragam */
+      .menu-item .menu-logo {
+        height: 28px;
+        width: auto;
+        max-width: 80%;
         display: block;
+        margin: 0 auto 8px auto;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+      /* Ikon fallback jika gambar gagal */
+      .menu-item .menu-icon-fallback {
+        font-size: 28px;
+        display: none;
         margin-bottom: 8px;
       }
+
       .menu-item .label {
         font-size: 13px;
         font-weight: 600;
@@ -154,14 +167,13 @@
         margin-top: 5px;
         color: #4a7a30;
       }
-
       .full-width {
         grid-column: 1 / -1;
+        min-height: 60px;
       }
       .full-width i {
         color: #6db03d;
       }
-
       /* ===== FOOTER ===== */
       .footer {
         display: flex;
@@ -187,7 +199,6 @@
         font-family: "Courier New", monospace;
         letter-spacing: 2px;
       }
-
       /* ===== DESKTOP (LANDSCAPE - NO SCROLL) ===== */
       @media (min-width: 769px) {
         body {
@@ -211,8 +222,10 @@
         .header-text h1 {
           font-size: 28px;
         }
+        .menu-item {
+          min-height: 110px;
+        }
       }
-
       /* ===== TABLET ===== */
       @media (max-width: 768px) and (min-width: 481px) {
         .grid {
@@ -221,8 +234,10 @@
         .card {
           padding: 24px;
         }
+        .menu-item {
+          min-height: 100px;
+        }
       }
-
       /* ===== HP PORTRAIT ===== */
       @media (max-width: 480px) {
         body {
@@ -258,9 +273,13 @@
           font-size: 11px;
         }
         .menu-item {
-          padding: 14px 8px;
+          padding: 12px 8px;
+          min-height: 85px;
         }
-        .menu-item i {
+        .menu-item .menu-logo {
+          height: 22px;
+        }
+        .menu-item .menu-icon-fallback {
           font-size: 22px;
         }
         .menu-item .label {
@@ -293,91 +312,89 @@
           <p>Link Akses ke Berbagai Sistem RS</p>
         </div>
       </div>
-
-      <!-- ===== GRID TOMBOL ===== -->
+      <!-- ===== GRID TOMBOL — SEMUA SERAGAM ===== -->
       <div class="grid">
-        <a href="http://192.168.90.12/smartplus/auth/login" target="_blank" class="menu-item" style="padding: 14px 10px;">
-    <img src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/smartplus-logo-1.png"
-         alt="SmartPlus"
-         style="height:32px; width:auto; display:block; margin:0 auto 8px auto; object-fit:contain;"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <i class="fas fa-user-md" style="color:#e67e22; display:none;"></i>
-    <span class="label">SMARTPLUS</span>
-    <span class="badge">ERM</span>
-</a>
-        <a href="https://www.sariasih.id/" target="_blank" class="menu-item" style="padding: 7px 5px;">
-    <img src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/logo-said.png"
-         alt="SARIASIH.ID"
-         style="height:32px; width:auto; display:block; margin:0 auto 8px auto; object-fit:contain;"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <i class="fas fa-user-md" style="color:#e67e22; display:none;"></i>
-    <span class="label">SARI ASIH</span>
-    <span class="badge">WEB</span>
-</a>
+
+        <!-- SMARTPLUS -->
+        <a href="http://192.168.90.12/smartplus/auth/login" target="_blank" class="menu-item">
+          <img class="menu-logo"
+               src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/smartplus-logo-1.png"
+               alt="SmartPlus"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <i class="fas fa-user-md menu-icon-fallback" style="color:#e67e22;"></i>
+          <span class="label">SMARTPLUS</span>
+          <span class="badge">ERM</span>
+        </a>
+
+        <!-- SARI ASIH -->
+        <a href="https://www.sariasih.id/" target="_blank" class="menu-item">
+          <img class="menu-logo"
+               src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/logo-said.png"
+               alt="SARIASIH.ID"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <i class="fas fa-user-md menu-icon-fallback" style="color:#e67e22;"></i>
+          <span class="label">SARI ASIH</span>
+          <span class="badge">WEB</span>
+        </a>
+
+        <!-- IGD -->
         <a href="https://db-igd.cpdh.web.id" target="_blank" class="menu-item">
-          <i class="fas fa-notes-medical" style="color: #2e86de"></i>
+          <i class="fas fa-notes-medical" style="font-size:28px; margin-bottom:8px; color:#2e86de;"></i>
           <span class="label">IGD</span>
           <span class="badge">Rekap IGD</span>
         </a>
 
-        <a
-          href="https://dashboard.cpdh.web.id/dashboard/4-dashboard-igd"
-          target="_blank"
-          class="menu-item"
-        >
-          <i class="fas fa-tachometer-alt" style="color: #10ac84"></i>
+        <!-- DASHBOARD IGD -->
+        <a href="https://dashboard.cpdh.web.id/dashboard/4-dashboard-igd" target="_blank" class="menu-item">
+          <i class="fas fa-tachometer-alt" style="font-size:28px; margin-bottom:8px; color:#10ac84;"></i>
           <span class="label">DASHBOARD IGD</span>
           <span class="badge">Real-time</span>
         </a>
-<a href="http://192.168.90.96/E-Klaim/" target="_blank" class="menu-item" style="padding: 7px 5px;">
-    <img src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/logo_icc_1.png"
-         alt="E-KLAIM"
-         style="height:32px; width:auto; display:block; margin:0 auto 8px auto; object-fit:contain;"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <i class="fas fa-user-md" style="color:#e67e22; display:none;"></i>
-    <span class="label">E-KLAIM</span>
-    <span class="badge">BPJS</span>
-</a>
-        <a href="http://192.168.90.97/puding/" target="_blank" class="menu-item" style="padding: 7px 5px;">
-    <img src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/epuding-1.png"
-         alt="E-PUDING"
-         style="height:32px; width:auto; display:block; margin:0 auto 8px auto; object-fit:contain;"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <i class="fas fa-user-md" style="color:#e67e22; display:none;"></i>
-    <span class="label">E-PUDING</span>
-    <span class="badge">CASEMIX</span>
-</a>
-        <a
-          href="https://sariasihgroup.com/angketpasien/"
-          target="_blank"
-          class="menu-item"
-        >
-          <i class="fas fa-procedures" style="color: #e84393"></i>
+
+        <!-- E-KLAIM -->
+        <a href="http://192.168.90.96/E-Klaim/" target="_blank" class="menu-item">
+          <img class="menu-logo"
+               src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/logo_icc_1.png"
+               alt="E-KLAIM"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <i class="fas fa-user-md menu-icon-fallback" style="color:#e67e22;"></i>
+          <span class="label">E-KLAIM</span>
+          <span class="badge">BPJS</span>
+        </a>
+
+        <!-- E-PUDING -->
+        <a href="http://192.168.90.97/puding/" target="_blank" class="menu-item">
+          <img class="menu-logo"
+               src="https://raw.githubusercontent.com/nhnurhabibullah007try/cpdh/main/epuding-1.png"
+               alt="E-PUDING"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <i class="fas fa-user-md menu-icon-fallback" style="color:#e67e22;"></i>
+          <span class="label">E-PUDING</span>
+          <span class="badge">CASEMIX</span>
+        </a>
+
+        <!-- ANGKET PASIEN -->
+        <a href="https://sariasihgroup.com/angketpasien/" target="_blank" class="menu-item">
+          <i class="fas fa-procedures" style="font-size:28px; margin-bottom:8px; color:#e84393;"></i>
           <span class="label">ANGKET PASIEN</span>
           <span class="badge">Rajal & Ranap</span>
         </a>
 
-        <a
-          href="https://www.google.com/search?q=google+review+sari+asih+cipondoh&sca_esv=fa9b82bc780cd223&sxsrf=APpeQntbwolNBlppMAi3AtuPZHRb7Gdt7Q%3A1784256192042&ei=wJZZauGZArKX4-EPndTy4Q0&biw=1536&bih=695&ved=0ahUKEwjh-Y6k2NiVAxWyyzgGHR2qPNwQ4dUDCBA&uact=5&oq=google+review+sari+asih+cipondoh&gs_lp=Egxnd3Mtd2l6LXNlcnAiIGdvb2dsZSByZXZpZXcgc2FyaSBhc2loIGNpcG9uZG9oMgYQABgWGB4yCBAAGIAEGKIEMgUQABjvBTIFEAAY7wUyBRAAGO8FSOATUNkBWJYScAF4AZABAJgBgQGgAekLqgEEMTguMbgBA8gBAPgBAZgCFKACkw3CAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICDhAAGOQCGNYEGLAD2AEBwgIZEC4YgAQYigUYQxjHARjRAxjIAxiwA9gBAcICBRAAGIAEwgILEC4YgAQYxwEYrwHCAggQABiABBjLAcICDhAuGIAEGMcBGK8BGI4FmAMAiAYBkAYSugYGCAEQARgJkgcEMTcuM6AH84ABsgcEMTYuM7gHhg3CBwcwLjUuOC43yAeBAYAIAQ&sclient=gws-wiz-serp#"
-          target="_blank"
-          class="menu-item"
-        >
-          <i class="fab fa-google" style="color: #00b894"></i>
+        <!-- GOOGLE REVIEW -->
+        <a href="https://www.google.com/search?q=google+review+sari+asih+cipondoh" target="_blank" class="menu-item">
+          <i class="fab fa-google" style="font-size:28px; margin-bottom:8px; color:#4285F4;"></i>
           <span class="label">Google Review</span>
           <span class="badge">Google</span>
         </a>
 
-        <a
-          href="https://cpdh.web.id"
-          target="_blank"
-          class="menu-item full-width"
-          style="background: #f5faf2; border: 1px dashed #6db03d"
-        >
+        <!-- FULL WIDTH -->
+        <a href="https://cpdh.web.id" target="_blank" class="menu-item full-width"
+           style="background:#f5faf2; border:1px dashed #6db03d;">
           <i class="fas fa-external-link-alt"></i>
           <span class="label">Aplikasi Lainnya (Menyusul)</span>
         </a>
-      </div>
 
+      </div>
       <!-- ===== FOOTER ===== -->
       <div class="footer">
         <div class="info">
@@ -386,7 +403,6 @@
         <div class="jam-digital" id="jamDigital">--:--:--</div>
       </div>
     </div>
-
     <script>
       function updateJam() {
         const now = new Date();
